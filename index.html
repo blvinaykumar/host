@@ -1,12 +1,116 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>hello</title>
+  <title>Love me</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    body {
+      background-color: #ffe6e6;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    h1 {
+      color: #ff66b2;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    #By, #Bn {
+      margin: 10px;
+    }
+    #Bn {
+      /* position: absolute; */
+    }
+    input[type="button"] {
+      background-color: #ff66b2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 4px #999;
+    }
+    input[type="button"]:hover {
+      background-color: #ff3385;
+    }
+    input[type="button"]:active {
+      background-color: #ff3385;
+      box-shadow: 0 2px #666;
+      transform: translateY(2px);
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+      input[type="button"] {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
+  </style>
+  <script type="text/javascript">
+    function f1(){
+        Swal.fire({
+          title: 'Yes!',
+          text: 'You are the peanut butter to my jelly!',
+          icon: 'success',
+          confirmButtonText: 'Aww'
+        });
+    } 
+    var flag=1;
+    function f(){ 
+        var Bn = document.getElementById('Bn');
+        var aWidth= document.body.clientWidth || document.documentElement.clientWidth;
+        var aHeight= document.body.clientHeight || document.documentElement.clientHeight;
+        var sJs1=Math.floor(Math.random()*aHeight);
+        var sJs2=Math.floor(Math.random()*aWidth);
+            Bn.style.position='absolute';
+        
+        if(flag==1){
+            Bn.style.top=sJs1 + 'px';
+            Bn.style.left=sJs2+'px'; 
+            flag=2;
+            
+        }else if(flag==2){
+            Bn.style.top=sJs1+'px';
+            Bn.style.left=sJs2+'px';
+            flag=3;
+        }else if(flag==3){
+        Bn.style.top=235 + 'px';
+            Bn.style.left=286 + 'px';
+            flag=4;
+        }else if(flag==4){
+            Bn.style.top=235 + 'px';
+            Bn.style.left=360 + 'px';
+            flag=1;
+        }
+    }
+    function f2(){
+      Swal.fire({
+        title: 'No!',
+        text: 'Btau abhi 🔪 😡',
+        icon: 'warning',
+        confirmButtonText: 'Acha 👋'
+      });
+    }
+  </script>
 </head>
-<body>
-	<h1>Hello world</h1>
 
+<body>
+  <h1>Do you love me?</h1>
+  <div id="By">
+    <input type="button" value=" Yes " onclick="f1()">
+  </div>
+  <div id="Bn">
+    <input type="button" value=" N o " onmouseover="f()" onclick="f2()">
+  </div> 
 </body>
 </html>
